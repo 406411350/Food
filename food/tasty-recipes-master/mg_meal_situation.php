@@ -1,0 +1,243 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<?php
+session_start();
+if (!isset($_SESSION["account"])) {
+  header("Location:mg_login.php");
+};
+
+require 'db.php';
+require 'sql.php';
+?>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Tasty Recipes</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area ">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-2">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-7">
+                            <div class="main-menu   d-none d-lg-block">
+                                <nav>
+                                   <ul id="navigation">
+                                       <li><a href="管理者.php">餐點管理</a></li>
+                                        <li><a href="mg_meal_situation.php">餐點現況</a></li>
+                                        <li><a href="logout.php">登出</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="search_icon">
+                                <a href="#">
+                                    <i class="ti-search"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+ <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>管理員 餐點狀況</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_start -->
+
+    <!-- /recepie_area_start  -->
+
+    <!-- recepie_videos   -->
+
+    
+    <!-- dish_area start  -->
+    <br>
+    
+    <!--/ dish_area start  -->
+ <div class="row shuffle-wrapper food-gallery">
+          
+	      	<div class="col-lg-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;design&quot;,&quot;illustration&quot;]">
+	          	<div class="menu-item position-relative ">
+	                <div class="d-flex align-items-center">
+	                	<img src="img/咖哩飯.jpg" width="150" height="150" hspace= "50" alt="" class="img-fluid">
+                		<div>
+                			<h4>咖哩飯<span>40$</span></h4>
+                			<!--<p>&nbsp;&nbsp;&nbsp;Chinese mustard/Chipotle aiol</p>-->
+                			<form>
+                			    <div class="mb-4">
+                                    <form action=update>
+                                        <? 
+                                        mysql_connect("localhost","root","jianntai22");
+mysql_select_db("sa");
+
+mysql_query("update food set canbuy='0' where food_id='2'");
+
+?>
+                                        <button  type="radio" name="situation" class="genric-btn primary small">尚有存貨</button></form>
+                                    
+                                    <button   type="radio" name="situation" class="genric-btn success small">已售完&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                
+                			    </div>
+                			</form>
+                			
+                		</div>
+	                </div>
+
+	        	</div>
+	      </div>
+	        </div>
+	      
+    <!-- latest_trand     -->
+    <div class="row shuffle-wrapper food-gallery">
+    <div class="col-lg-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;branding&quot;]">
+	        	<div class="menu-item position-relative ">
+	                 <div class="d-flex align-items-center">
+	                	<img src="img/水餃.jpg" width="150" height="150" hspace= "50" alt="" class="img-fluid">
+                		<div>
+                			<h4>水餃十顆<span>50$</span></h4>
+                			<form>
+                			    <div class="mb-4">
+                                    <form action=update>
+                                        <? 
+                                        mysql_connect("localhost","root","jianntai22");
+mysql_select_db("sa");
+
+mysql_query("update food set canbuy='0' where food_id='2'");
+
+?>
+                                        <button  type="radio" name="situation" class="genric-btn primary small">尚有存貨</button></form>
+                                    
+                                    <button   type="radio" name="situation" class="genric-btn success small">已售完&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                
+                			    </div>
+                            </form>
+	        	</div>
+	      </div> </div> </div> </div>
+	      
+	      <div class="row shuffle-wrapper food-gallery">
+     <div class="col-lg-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;branding&quot;]">
+	        	<div class="menu-item position-relative ">
+	                 <div class="d-flex align-items-center">
+	                	<img src="img/可樂.jpg" width="150" height="150" hspace= "50" alt="" class="img-fluid">
+                		<div>
+                			<h4>可樂<span>20$</span></h4>
+                			<form>
+                			    <div class="mb-4">
+                                    <form action=update>
+                                        <? 
+                                        mysql_connect("localhost","root","jianntai22");
+mysql_select_db("sa");
+
+mysql_query("update food set canbuy='0' where food_id='2'");
+
+?>
+                                        <button  type="radio" name="situation" class="genric-btn primary small">尚有存貨</button></form>
+                                    
+                                    <button   type="radio" name="situation" class="genric-btn success small">已售完&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                
+                			    
+                		</div>
+                            </form>
+	        	</div>
+	      </div> </div> </div> </div>
+	      
+	       <div class="row shuffle-wrapper food-gallery">
+     <div class="col-lg-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;branding&quot;]">
+	        	<div class="menu-item position-relative ">
+	                 <div class="d-flex align-items-center">
+	                	<img src="img/酸辣麵.jpg" width="150" height="150" hspace= "50" alt="" class="img-fluid">
+                		<div>
+                			<h4>酸辣麵<span>50$</span></h4>
+                			<form>
+                			    <div class="mb-4">
+                			          <button  type="radio" name="situation" class="genric-btn primary small">尚有存貨</button>
+                    
+                                    <button   type="radio" name="situation" class="genric-btn success small">已售完&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                			    </div>
+                			</form>
+                		</div>
+	                </div>
+	        	</div>
+	      </div> </div>
+    <!--/ footer  -->
+
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
